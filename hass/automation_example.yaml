@@ -1,0 +1,18 @@
+- id: '1701097461824'
+  alias: MriyaRoomsCheck
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.mriyarooms
+    attribute: count
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.mriyarooms
+    attribute: count
+    above: 0
+  action:
+  - service: notify.mobile_app_ivitalii
+    data:
+      message: MRIYA ROOMS CHANGED!!!
+  mode: single

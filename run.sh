@@ -1,0 +1,1 @@
+docker run --restart=always -v /mnt/data/supervisor/homeassistant/:/tmp/token -d --name sberidtoken --entrypoint bash sberidtoken -c "cd /tmp/token; exec node get_sberid_token.js"

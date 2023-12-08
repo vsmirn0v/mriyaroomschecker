@@ -1,0 +1,15 @@
+command_line:
+  - sensor:
+      name: MriyaRooms
+      scan_interval: 118
+      command_timeout: 40
+      unit_of_measurement: "room"
+      value_template: '{{ value_json.count }}' 
+      json_attributes:
+        - rooms
+        - code
+        - count
+        - rate
+        - arrival
+        - departure
+      command: "python /config/get_rooms.py"

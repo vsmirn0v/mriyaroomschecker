@@ -1,0 +1,9 @@
+type: markdown
+content: >-
+  {{ states.sensor.mriyarooms.attributes.arrival }} - {{} states.sensor.mriyarooms.attributes.departure }}
+  code: {{ states.sensor.mriyarooms.attributes.code }}, rate: {{ states.sensor.mriyarooms.attributes.rate }}, rooms: {{ states.sensor.mriyarooms.attributes.count }}
+  {% for l in states.sensor.mriyarooms.attributes.rooms %}
+  {% if l != ""%}- {{ l }}{% endif %}
+  {%- endfor %}
+  updated @ {{ states.sensor.mriyarooms.last_updated.astimezone().strftime ("%d/%m/%y%H:SM:%S") }}
+title: Mriya Rooms Available
